@@ -10,7 +10,7 @@ const cors = require("cors");
 const xlsx = require("xlsx");
 
 const nodemailer = require('nodemailer');
-const port = 3001;
+const port = process.env.PORT || 3001	;
 app.use(express.json());
 app.use(cors());
 const transporter = nodemailer.createTransport({
