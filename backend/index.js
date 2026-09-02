@@ -51,7 +51,7 @@ app.use("/images", express.static("upload/images"));
 app.post("/upload", upload.single("product"), (req, res) => {
 	res.json({
 		success: 1,
-		image_url: `http://localhost:${port}/images/${req.file.filename}`,
+		image_url: `https://fashionstoreweb.onrender.com/images/${req.file.filename}`,
 	});
 });
 app.post("/upload-multiple", upload.array("products", 200), (req, res) => {
@@ -62,7 +62,7 @@ app.post("/upload-multiple", upload.array("products", 200), (req, res) => {
 	}
 
 	const imageUrls = req.files.map(
-		(file) => `http://localhost:${port}/images/${file.filename}`
+		(file) => `https://fashionstoreweb.onrender.com/images/${file.filename}`
 	);
 
 	res.json({
