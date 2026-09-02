@@ -27,7 +27,7 @@ export default function SearchPage() {
 	}, [location.state, allProduct]);
 
 	useEffect(() => {
-		fetch("http://localhost:3001/allproducts")
+		fetch("https://fashionstoreweb.onrender.com/allproducts")
 			.then((response) => response.json())
 			.then((data) => {
 				setAllProduct(data);
@@ -37,7 +37,7 @@ export default function SearchPage() {
 				];
 				setCategories(uniqueCategories);
 			});
-		fetch("http://localhost:3001/getallreview", {
+		fetch("https://fashionstoreweb.onrender.com/getallreview", {
 			method: "POST",
 			headers: {
 				Accept: "application/form-data",

@@ -15,13 +15,13 @@ export default function Product() {
 	const [reviews, setReviews] = useState([]);
 	const [users, setUsers] = useState([]);
 	useEffect(() => {
-		fetch(`http://localhost:3001/product/${id}`)
+		fetch(`https://fashionstoreweb.onrender.com/product/${id}`)
 			.then((response) => response.json())
 			.then((data) => {
 				console.log(data[0]);
 				setDetailProduct(data[0]);
 			});
-		fetch(`http://localhost:3001/getreview/${id}`, {
+		fetch(`https://fashionstoreweb.onrender.com/getreview/${id}`, {
 			method: "POST",
 			headers: {
 				Accept: "application/form-data",
@@ -33,7 +33,7 @@ export default function Product() {
 			.then((data) => {
 				console.log(data);
 				setReviews(data);
-				fetch("http://localhost:3001/getalluser", {
+				fetch("https://fashionstoreweb.onrender.com/getalluser", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json",
@@ -53,7 +53,7 @@ export default function Product() {
 
 	useEffect(() => {
 		if (DetailProduct.category) {
-			fetch("http://localhost:3001/allproducts")
+			fetch("https://fashionstoreweb.onrender.com/allproducts")
 				.then((response) => response.json())
 				.then((data) => {
 					console.log("Category: ", DetailProduct.category);
@@ -118,7 +118,7 @@ export default function Product() {
 		if (localStorage.getItem("auth-token")) {
 			console.log("Quantity: " + quantity);
 
-			fetch("http://localhost:3001/addtocart", {
+			fetch("https://fashionstoreweb.onrender.com/addtocart", {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",

@@ -28,7 +28,7 @@ export default function Home() {
 	]);
 
 	useEffect(() => {
-		fetch("http://localhost:3001/allproducts")
+		fetch("https://fashionstoreweb.onrender.com/allproducts")
 			.then((response) => response.json())
 			.then((data) => {
 				setAll_Products(data);

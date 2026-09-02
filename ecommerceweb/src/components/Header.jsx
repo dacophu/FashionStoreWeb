@@ -11,7 +11,7 @@ export default function Header() {
 	useEffect(() => {
 		setIsLogin(localStorage.getItem("auth-token"));
 		if (localStorage.getItem("auth-token")) {
-			fetch("http://localhost:3001/getcart", {
+			fetch("https://fashionstoreweb.onrender.com/getcart", {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",

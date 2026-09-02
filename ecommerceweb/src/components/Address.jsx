@@ -11,7 +11,7 @@ export default function Address() {
 
 	useEffect(() => {
 		if (localStorage.getItem("auth-token")) {
-			fetch("http://localhost:3001/getuser", {
+			fetch("https://fashionstoreweb.onrender.com/getuser", {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",

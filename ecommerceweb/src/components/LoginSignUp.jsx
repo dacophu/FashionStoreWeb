@@ -36,7 +36,7 @@ export default function LoginSignUp() {
 
 	const login = async () => {
 		let responseData;
-		await fetch("http://localhost:3001/login", {
+		await fetch("https://fashionstoreweb.onrender.com/login", {
 			method: "POST",
 			headers: {
 				Accept: "application/form-data",
@@ -57,7 +57,7 @@ export default function LoginSignUp() {
 	};
 	const signup = async () => {
 		let responseData;
-		await fetch("http://localhost:3001/signup", {
+		await fetch("https://fashionstoreweb.onrender.com/signup", {
 			method: "POST",
 			headers: {
 				Accept: "application/form-data",
@@ -98,7 +98,7 @@ export default function LoginSignUp() {
 	const hanleSendCodeEmail = () => {
 		let ranCode = Math.floor(100000 + Math.random() * 900000);
 		setCode(ranCode);
-		fetch("http://localhost:3001/sendemail", {
+		fetch("https://fashionstoreweb.onrender.com/sendemail", {
 			method: "POST",
 			headers: {
 				Accept: "application/form-data",
@@ -127,7 +127,7 @@ export default function LoginSignUp() {
 		}
 	};
 	const handleUpdatePassword = () => {
-		fetch("http://localhost:3001/updatepassword", {
+		fetch("https://fashionstoreweb.onrender.com/updatepassword", {
 			method: "POST",
 			headers: {
 				Accept: "application/form-data",

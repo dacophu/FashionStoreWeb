@@ -11,7 +11,7 @@ export default function Order() {
 	const [users, setUsers] = useState();
 	const [selectedTab, setSelectedTab] = useState("all");
     const fetchData=()=>{
-        fetch("http://localhost:3001/getallorder", {
+        fetch("https://fashionstoreweb.onrender.com/getallorder", {
 			method: "POST",
 			headers: {
 				Accept: "application/form-data",
@@ -42,7 +42,7 @@ export default function Order() {
 				];
 				const productData = await Promise.all(
 					uniqueProductIds.map((productId) =>
-						fetch(`http://localhost:3001/product/${productId}`)
+						fetch(`https://fashionstoreweb.onrender.com/product/${productId}`)
 							.then((response) => response.json())
 							.then((product) => product[0])
 					)
@@ -50,7 +50,7 @@ export default function Order() {
 				setProducts(productData);
 				const userData = await Promise.all(
 					uniqueUserIds.map((userId) =>
-						fetch(`http://localhost:3001/getuserbyid`, {
+						fetch(`https://fashionstoreweb.onrender.com/getuserbyid`, {
 							method: "POST",
 							headers: {
 								Accept: "application/form-data",
@@ -74,7 +74,7 @@ export default function Order() {
 
 	const handleChangeStatus = (orderId,status) => {
         console.log(orderId,status);
-        fetch(`http://localhost:3001/updateorderstatus`, {
+        fetch(`https://fashionstoreweb.onrender.com/updateorderstatus`, {
             method: "POST",
             headers: {
                 Accept: "application/form-data",

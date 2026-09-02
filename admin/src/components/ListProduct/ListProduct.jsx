@@ -5,7 +5,7 @@ export default function () {
 	const [allproducts, setAllProducts] = useState([]);
 
 	const fetchInfo = async () => {
-		await fetch("http://localhost:3001/allproducts")
+		await fetch("https://fashionstoreweb.onrender.com/allproducts")
 			.then((res) => res.json())
 			.then((data) => {
 				setAllProducts(data);
@@ -17,7 +17,7 @@ export default function () {
 	}, []);
 
   const remove_product= async(id)=>{
-    await fetch("http://localhost:3001/removeproduct",{
+    await fetch("https://fashionstoreweb.onrender.com/removeproduct",{
       method:'POST',
       headers:{
         Accept:'application/json',

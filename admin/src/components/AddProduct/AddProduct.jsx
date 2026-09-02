@@ -26,7 +26,7 @@ export default function AddProduct() {
 
 		let formData = new FormData();
 		formData.append("product", image);
-		await fetch("http://localhost:3001/upload", {
+		await fetch("https://fashionstoreweb.onrender.com/upload", {
 			method: "POST",
 			headers: {
 				Accept: "Application.json",
@@ -41,7 +41,7 @@ export default function AddProduct() {
 		if (responseData.success) {
 			product.image = responseData.image_url;
 			console.log(product);
-			await fetch("http://localhost:3001/addproduct", {
+			await fetch("https://fashionstoreweb.onrender.com/addproduct", {
 				method: "POST",
 				headers: {
 					Accept: "application/json",
@@ -71,7 +71,7 @@ export default function AddProduct() {
 			formData.append("products", images[i]);
 		}
 
-		await fetch("http://localhost:3001/upload-multiple", {
+		await fetch("https://fashionstoreweb.onrender.com/upload-multiple", {
 			method: "POST",
 			body: formData,
 		})
@@ -101,7 +101,7 @@ export default function AddProduct() {
 
 		let formData = new FormData();
 		formData.append("file", file);
-		await fetch("http://localhost:3001/addlistproduct", {
+		await fetch("https://fashionstoreweb.onrender.com/addlistproduct", {
 			method: "POST",
 			body: formData,
 		})

@@ -5,7 +5,7 @@ export default function CreateAddress() {
 	const [checked, setChecked] = useState(false);
 	const handleCreateAddress = () => {
 		if (localStorage.getItem("auth-token")) {
-			fetch("http://localhost:3001/createaddress", {
+			fetch("https://fashionstoreweb.onrender.com/createaddress", {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",

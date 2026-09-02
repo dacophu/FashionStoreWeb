@@ -17,7 +17,7 @@ export default function Shipping() {
 	const productsToOrder = location.state?.selectedItems || [];
 	useEffect(() => {
 		if (localStorage.getItem("auth-token")) {
-			fetch("http://localhost:3001/getuser", {
+			fetch("https://fashionstoreweb.onrender.com/getuser", {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",
@@ -49,7 +49,7 @@ export default function Shipping() {
 
 	const handleOrder = () => {
 		if (localStorage.getItem("auth-token")) {
-			fetch("http://localhost:3001/createorder", {
+			fetch("https://fashionstoreweb.onrender.com/createorder", {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",
@@ -68,7 +68,7 @@ export default function Shipping() {
 					for (const itemToRemove of productsToOrder) {
 						try {
 							const response = await fetch(
-								"http://localhost:3001/removefromcart",
+								"https://fashionstoreweb.onrender.com/removefromcart",
 								{
 									method: "POST",
 									headers: {

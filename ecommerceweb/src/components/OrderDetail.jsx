@@ -14,18 +14,18 @@ export default function OrderDetail() {
 	const [comment, setComment] = useState("");
 
 	useEffect(() => {
-		fetch(`http://localhost:3001/getorder/${id}`)
+		fetch(`https://fashionstoreweb.onrender.com/getorder/${id}`)
 			.then((response) => response.json())
 			.then((data) => {
 				setDetailOrder(data[0]);
-				fetch(`http://localhost:3001/product/${data[0].product_id}`)
+				fetch(`https://fashionstoreweb.onrender.com/product/${data[0].product_id}`)
 					.then((response) => response.json())
 					.then((productdata) => {
 						setProduct(productdata[0]);
 					});
 			});
 		if (localStorage.getItem("auth-token")) {
-			fetch("http://localhost:3001/getuser", {
+			fetch("https://fashionstoreweb.onrender.com/getuser", {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",
@@ -50,7 +50,7 @@ export default function OrderDetail() {
 
 	const handleSendReview = () => {
 		if (localStorage.getItem("auth-token")) {
-			fetch("http://localhost:3001/sendreview", {
+			fetch("https://fashionstoreweb.onrender.com/sendreview", {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",

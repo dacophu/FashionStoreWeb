@@ -8,7 +8,7 @@ export default function CartPage() {
 	const [items, setItems] = useState([]);
 	useEffect(() => {
 		if (localStorage.getItem("auth-token")) {
-			fetch("http://localhost:3001/getcart", {
+			fetch("https://fashionstoreweb.onrender.com/getcart", {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",
@@ -23,7 +23,7 @@ export default function CartPage() {
 					console.log("Cart Data: ", cartData);
 					const fetchProductDataPromises = cartData.map((cartItem, i) => {
 						if (cartItem.length >= 1) {
-							return fetch(`http://localhost:3001/product/${i}`)
+							return fetch(`https://fashionstoreweb.onrender.com/product/${i}`)
 								.then((response) => response.json())
 								.then((productData) => {
 									console.log(`Product ${i} data`);
@@ -71,7 +71,7 @@ export default function CartPage() {
 		setItems(updateItems);
 
 		if (localStorage.getItem("auth-token")) {
-			fetch("http://localhost:3001/removefromcart", {
+			fetch("https://fashionstoreweb.onrender.com/removefromcart", {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",
@@ -134,7 +134,7 @@ export default function CartPage() {
 		if (localStorage.getItem("auth-token")) {
 			for (const itemToRemove of itemToRemoves) {
 				try {
-					const response = await fetch("http://localhost:3001/removefromcart", {
+					const response = await fetch("https://fashionstoreweb.onrender.com/removefromcart", {
 						method: "POST",
 						headers: {
 							Accept: "application/form-data",

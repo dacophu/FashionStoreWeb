@@ -11,7 +11,7 @@ export default function EditAddress() {
 	const [isDefault, setIsDefault] = useState(false);
 	useEffect(() => {
 		if (localStorage.getItem("auth-token")) {
-			fetch("http://localhost:3001/getuser", {
+			fetch("https://fashionstoreweb.onrender.com/getuser", {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",
@@ -29,7 +29,7 @@ export default function EditAddress() {
 	}, [index]);
 	const hanldeUpdateAddress = () => {
 		if (localStorage.getItem("auth-token")) {
-			fetch("http://localhost:3001/updateaddress", {
+			fetch("https://fashionstoreweb.onrender.com/updateaddress", {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",

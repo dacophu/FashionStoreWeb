@@ -14,7 +14,7 @@ export default function CustomerInfo() {
 	const [user, setUser] = useState();
 	useEffect(() => {
 		if (localStorage.getItem("auth-token")) {
-			fetch("http://localhost:3001/getuser", {
+			fetch("https://fashionstoreweb.onrender.com/getuser", {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",
@@ -39,7 +39,7 @@ export default function CustomerInfo() {
 		
 			if (localStorage.getItem("auth-token")) {
 				let date = new Date(dob.year, dob.month - 1, dob.day);
-				fetch("http://localhost:3001/updateuser", {
+				fetch("https://fashionstoreweb.onrender.com/updateuser", {
 					method: "POST",
 					headers: {
 						Accept: "application/form-data",

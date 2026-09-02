@@ -24,7 +24,7 @@ export default function Report() {
 
 	useEffect(() => {
 		// Lấy danh sách đơn hàng
-		fetch("http://localhost:3001/getallorder", {
+		fetch("https://fashionstoreweb.onrender.com/getallorder", {
 			method: "POST",
 			headers: {
 				Accept: "application/json",
@@ -39,7 +39,7 @@ export default function Report() {
 			});
 
 		// Lấy danh sách sản phẩm
-		fetch("http://localhost:3001/allproducts")
+		fetch("https://fashionstoreweb.onrender.com/allproducts")
 			.then((response) => response.json())
 			.then((data) => {
 				setAllProducts(data);

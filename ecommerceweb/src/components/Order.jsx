@@ -14,7 +14,7 @@ export default function Order() {
 	const [selectedTab, setSelectedTab] = useState("all");
 	useEffect(() => {
 		if (localStorage.getItem("auth-token")) {
-			fetch("http://localhost:3001/getorder", {
+			fetch("https://fashionstoreweb.onrender.com/getorder", {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",
@@ -45,7 +45,7 @@ export default function Order() {
 					];
 					const productData = await Promise.all(
 						uniqueProductIds.map((productId) =>
-							fetch(`http://localhost:3001/product/${productId}`)
+							fetch(`https://fashionstoreweb.onrender.com/product/${productId}`)
 								.then((response) => response.json())
 								.then((product) => product[0])
 						)
@@ -87,7 +87,7 @@ export default function Order() {
 	};
 	const handleCancelOrder = (orderId) => {
 		if (localStorage.getItem("auth-token")) {
-			fetch(`http://localhost:3001/updateorderstatus`, {
+			fetch(`https://fashionstoreweb.onrender.com/updateorderstatus`, {
 				method: "POST",
 				headers: {
 					Accept: "application/form-data",
