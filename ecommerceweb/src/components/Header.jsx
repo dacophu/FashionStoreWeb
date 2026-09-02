@@ -4,7 +4,7 @@ import { FaSearch, FaShoppingCart, FaUser } from "react-icons/fa";
 import { IoMenu } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import profileIcon from "../assets/profileicon.png";
-import logo from "../assets/logo.png";
+import logo from "../assets/LOGO.png";
 export default function Header() {
 	const [isLogin, setIsLogin] = useState(false);
 	const [cartCount, setCartCount] = useState(0);
